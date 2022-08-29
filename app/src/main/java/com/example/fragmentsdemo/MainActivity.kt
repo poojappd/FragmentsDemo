@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+//        val frag = findViewById<View>(R.id.staticFragment)
         stackCountDisplayText = findViewById(R.id.stackCount)
 
 
@@ -27,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     }
         fun frag1OnClick(view: View) {
             supportFragmentManager.beginTransaction().apply {
-                replace(R.id.fragmentContainer, StaticFragment())
+                replace(R.id.fragmentContainer, FragmentLifecycle())
                 addToBackStack("someName?")
                 commit()
             }
